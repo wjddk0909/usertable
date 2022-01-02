@@ -1,0 +1,44 @@
+.app {
+    width: 90%;
+    margin: 50px auto;
+    background: #fff;
+    letter-spacing: -1px;
+}
+.tit {
+    color: #737373;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+table {
+    width: 100%;
+    border: 0;
+    border-collapse: collapse;
+}
+.th {
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 0.8rem 0.2rem;
+    background: #659ee3;
+    color: #fff;
+}
+.id {
+    width: 10%;
+}
+.name {
+    width: calc((60% - 300px) / 3);
+}
+.mail {
+    width: calc((60% - 300px) / 3);
+}
+.tel {
+    width: calc((60% - 300px) / 3);
+}
+.site {
+    width: 10%;
+}
+.edit {
+    width:10%;
+}
+.del {
+    width: 10%;
+}

@@ -1,0 +1,12 @@
+.id {
+    text-align: center;
+}
+.td {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.2rem;
+    border-bottom: 1px solid #ddd;
+}
+.icon {
+    text-align: center;
+    cursor: pointer;
+}
