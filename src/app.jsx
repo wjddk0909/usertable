@@ -21,12 +21,12 @@ function App() {
     });
   },[]);
 
-  // 데이터 삭제하기
+  // 데이터 삭제하기 : filter()함수로 전달 받은 id가 아닐 경우 true로 리스트에 남고, 같은 id일 경우 false가 되어 리스트에서 제거
   const handleRemove = (id) => {
     setInfo(info => info.filter(item => item.id !== id));
   }
 
-  // 데이터 추가하기
+  // 데이터 추가하기 
   const handleSave = (data) => {
     if(data.id) {
       setInfo(
