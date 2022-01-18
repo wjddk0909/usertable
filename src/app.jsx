@@ -11,10 +11,11 @@ function App() {
   const [selected, setSelected] = useState('');
   const [modalOn, setModalOn] = useState(false);
 
-  // 고유id 값을 변수에 담기
+  // 고유id 값으로 사용될 id
+  // ref로 변수 담기
   const nextId = useRef(11);
 
-  // user 더미 데이터 호출하기
+  // user 더미 데이터 호출해서 마운트 됐을때 바로 뿌려주기
   useEffect(()=>{
     axios.get('https://jsonplaceholder.typicode.com/users').then((response)=>{
       setInfo(response.data);
@@ -28,16 +29,6 @@ function App() {
 
   // 데이터 추가하기 
   const handleSave = (data) => {
-    if(data.id) {
-      setInfo(
-        info.map(row => data.id === row.id ? {
-          id: data.id,
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          website: data.website
-        } : row))
-    } else {
       setInfo(info => info.concat(
         {
           id: nextId.current,
@@ -48,10 +39,10 @@ function App() {
         }
       ))
       nextId.current += 1;
-    }
   }
 
   // 데이터 수정
+  // 함수 실행 시 modalOn을 true로 만들어서 수정창 보이기
   const handleEdit = (item) => {
     setModalOn(true);
     const selectedData = {
@@ -65,6 +56,7 @@ function App() {
     setSelected(selectedData);
   };
 
+  // 수정창에서 닫기 버튼 클릭시 modalOn을 false로 만들어서 끄기
   const handleCancel = () => {
     setModalOn(false);
   }
