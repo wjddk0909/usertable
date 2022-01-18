@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from './addwrite.module.css';
 
 const Addwrite = ({ onSaveData }) => {
+    // 추가창 초기화
     const [add, setAdd] = useState({
         name: '',
         email:'',
@@ -9,6 +10,7 @@ const Addwrite = ({ onSaveData }) => {
         website:''
     });
 
+    // input창 변경되면 value값 넣어주기
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAdd({
@@ -17,6 +19,7 @@ const Addwrite = ({ onSaveData }) => {
         })
     };
 
+    // handleSav() 함수로 저장하기
     const handleSubmit = (e) => {
         e.preventDefault();
         onSaveData(add);

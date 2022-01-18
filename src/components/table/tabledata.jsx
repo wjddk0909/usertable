@@ -2,9 +2,11 @@ import React from "react";
 import styles from './tabledata.module.css';
 
 const Tabledata = ({ item, handleRemove, handleEdit }) => {
+    // 해당 id를 가진 item 삭제
     const onRemove = () => {
         handleRemove(item.id)
     }
+    // 수정하기
     const onEdit = () => {
         handleEdit(item);
     }

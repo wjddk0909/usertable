@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import styles from './editmodal.module.css';
 
 const Editmodal = ({ selectedData, handleCancel, handleEditSubmit }) => {
+    // 수정 선택된 객체 가져오기
     const [edited, setEdited] = useState(selectedData);
     const onCancel = () => {
         handleCancel();
     }
+
+    // input창 변경되면 value값 넣어주기
     const onEditChange = (e) => {
         setEdited({
             ...edited,
             [e.target.name]: e.target.value
         })
     }
+
+    // 수정된 값 넘기기
     const onSubmitEdit = (e) => {
         e.preventDefault();
         handleEditSubmit(edited);

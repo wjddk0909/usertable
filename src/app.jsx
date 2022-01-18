@@ -27,7 +27,7 @@ function App() {
     setInfo(info => info.filter(item => item.id !== id));
   }
 
-  // 데이터 추가하기 
+  // 데이터 추가하기, 기존 배열에 추가하여 새배열을 만들어줌
   const handleSave = (data) => {
       setInfo(info => info.concat(
         {
@@ -61,6 +61,7 @@ function App() {
     setModalOn(false);
   }
 
+  // 수정하고 저장하면 수정된 값 넘기기
   const handleEditSubmit = (item) => {
     console.log(item);
     handleSave(item);
